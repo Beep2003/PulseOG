@@ -1,2 +1,2 @@
 # PulseOG
-PulseOG is a project building on PulseChain
+PulseOG is a project building on PulseChain.
