@@ -31,6 +31,7 @@ module.exports = {
       skipDryRun: true
     },
     testnetpulsev2b: {
+      networkCheckTimeout: 10000,
       provider: () => new HDWalletProvider(mnemonic, `https://rpc.v2b.testnet.pulsechain.com`),
       network_id: 941,
       confirmations: 10,
