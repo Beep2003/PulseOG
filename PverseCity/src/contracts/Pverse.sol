@@ -36,7 +36,7 @@ contract Pverse is ERC721 {
             Building("Bitcoin Center", address(0x0), 0, -10, 0, 10, 5, 3)
         );
         buildings.push(
-            Building("Ethereum Kitten adoption ", address(0x0), 10, 0, 0, 5, 25, 5)
+            Building("Ethereum Kitten Adoption ", address(0x0), 10, 0, 0, 5, 25, 5)
         );
         buildings.push(
             Building("PulseChain Mall", address(0x0), -10, 0, 0, 5, 25, 5)
