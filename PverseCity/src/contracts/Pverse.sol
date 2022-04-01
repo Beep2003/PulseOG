@@ -2,8 +2,9 @@
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract Pverse is ERC721 {
+contract Pverse is ERC721, Ownable {
     uint256 public cost = 100000 ether;
     uint256 public maxSupply = 31;
     uint256 public totalSupply = 0;
