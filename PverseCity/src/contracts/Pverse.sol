@@ -204,4 +204,16 @@ contract Pverse is ERC721, Ownable {
         return buildings[_id - 1];
     }
 
+    function getBalance() public view returns(uint) {
+        return address(this).balance;
+    }
+    
+    function withdraw() public onlyOwner {
+    payable(msg.sender).transfer(address(this).balance);
+
+    }
+    
+
+}
+
 }
