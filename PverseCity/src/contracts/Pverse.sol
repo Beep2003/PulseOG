@@ -2,12 +2,19 @@
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract Pverse is ERC721, Ownable {
+contract Pverse is ERC721, ERC721URIStorage, Pausable, Ownable {
+    using Strings for uint256;
+    
+    string public baseURI;
+    string public baseExtension = ".json";
     uint256 public cost = 100000 ether;
     uint256 public maxSupply = 31;
     uint256 public totalSupply = 0;
+    uint256 public balanceReceived;
 
     struct Building {
         string name;
@@ -21,7 +28,8 @@ contract Pverse is ERC721, Ownable {
     }
 
     Building[] public buildings;
-
+    
+    
     constructor(
         string memory _name,
         string memory _symbol,
@@ -32,7 +40,9 @@ contract Pverse is ERC721, Ownable {
         buildings.push(
             Building("Pverse City Hall", address(0x0), 0, 0, 0, 10, 10, 10)
         );
-        buildings.push(Building("PulseOG Hotel", address(0x0), 0, 10, 0, 10, 5, 3));
+        buildings.push(
+            Building("PulseOG Hotel", address(0x0), 0, 10, 0, 10, 5, 3));
+        
         buildings.push(
             Building("Bitcoin Center", address(0x0), 0, -10, 0, 10, 5, 3)
         );
@@ -153,7 +163,7 @@ contract Pverse is ERC721, Ownable {
         uint256 supply = totalSupply;
         require(supply <= maxSupply);
         require(buildings[_id - 1].owner == address(0x0));
-        require(msg.value >= 100000 ether);
+        require(msg.value >= cost);
 
         // NOTE: tokenID always starts from 1, but our array starts from 0
         buildings[_id - 1].owner = msg.sender;
@@ -195,7 +205,6 @@ contract Pverse is ERC721, Ownable {
         _safeTransfer(from, to, tokenId, _data);
     }
 
-     // Public View Functions
     function getBuildings() public view returns (Building[] memory) {
         return buildings;
     }
@@ -212,8 +221,64 @@ contract Pverse is ERC721, Ownable {
     payable(msg.sender).transfer(address(this).balance);
 
     }
-    
 
-}
+    function setBaseURI(string memory _newBaseURI) public onlyOwner {
+    baseURI = _newBaseURI;
+    }
+
+  function setBaseExtension(string memory _newBaseExtension) public onlyOwner {
+    baseExtension = _newBaseExtension;
+    }
+
+    function _baseURI() internal pure override returns (string memory) {
+        return "ipfs://QmR5Uq7z87zp4vNKauBgLGAYuXXfZskbr2mAecVRPp6dNE/";
+    }
+
+    function pause() public onlyOwner {
+        _pause();
+    }
+
+    function unpause() public onlyOwner {
+        _unpause();
+    }
+
+    function safeMint(address to, uint256 tokenId, string memory uri)
+        public
+        onlyOwner
+    {
+        _safeMint(to, tokenId);
+        _setTokenURI(tokenId, uri);
+    }
+
+    function _beforeTokenTransfer(address from, address to, uint256 tokenId)
+        internal
+        whenNotPaused
+        override
+    {
+        super._beforeTokenTransfer(from, to, tokenId);
+    }
+
+    // The following functions are overrides required by Solidity.
+
+    function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
+        super._burn(tokenId);
+    }
+
+    function tokenURI(uint256 tokenId)
+        public
+        view
+        override(ERC721, ERC721URIStorage)
+        returns (string memory)
+    {
+    require(
+      _exists(tokenId),
+      "ERC721Metadata: URI query for nonexistent token"
+    );
+
+    string memory currentBaseURI = _baseURI();
+    return bytes(currentBaseURI).length > 0
+        ? string(abi.encodePacked(currentBaseURI, tokenId.toString(), baseExtension))
+        : "";
+  }
 
 }
