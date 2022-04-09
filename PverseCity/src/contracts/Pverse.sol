@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+// PulseChain and all the coins on it are designed to start with no value, which is ideal.
+
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
@@ -11,7 +13,7 @@ contract Pverse is ERC721, ERC721URIStorage, Pausable, Ownable {
     
     string public baseURI;
     string public baseExtension = ".json";
-    uint256 public cost = 100000 ether;
+    uint256 public cost = 1 ether;
     uint256 public maxSupply = 31;
     uint256 public totalSupply = 0;
     uint256 public balanceReceived;
