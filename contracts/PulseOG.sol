@@ -70,7 +70,7 @@ contract PulseOG is Ownable, Stakeable{
     emit Transfer(address(0), account, amount);
   }
   
-  BurnStruct[] transactions;
+  
   function _burn(address account, uint256 amount) internal {
     require(account != address(0), "PulseOG: cannot burn from zero address");
     require(_balances[account] >= amount, "PulseOG: Cannot burn more than the account owns");
@@ -79,7 +79,7 @@ contract PulseOG is Ownable, Stakeable{
     _balances[account] = _balances[account] - amount;
     
     _totalSupply = _totalSupply - amount;
-    transactions.push(BurnStruct(account, amount));
+    
     emit Transfer(account, address(0), amount);
   }
   
@@ -174,14 +174,7 @@ contract PulseOG is Ownable, Stakeable{
       _mint(msg.sender, amount_to_mint);
     }
 
-     struct BurnStruct {
-       address account;
-       uint256 amount;
-     }
-     
-     function getAllBurns() public view returns (BurnStruct[] memory) {
-        return transactions;
-    }
+    
     
     
 }
