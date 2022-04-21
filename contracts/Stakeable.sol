@@ -6,9 +6,10 @@ contract Stakeable {
 
 
     
-    constructor() {
+    constructor() { 
         
         stakeholders.push();
+        
     }
     
     struct Stake{
@@ -17,7 +18,8 @@ contract Stakeable {
         uint256 since;
         uint256 claimable;
     }
-    
+  
+
     struct Stakeholder{
         address user;
         Stake[] address_stakes;
@@ -54,7 +56,7 @@ contract Stakeable {
         return userIndex; 
     }
 
-   
+    StakeStruct[] transactions;
     function _stake(uint256 _amount) internal{
          
         require(_amount > 0, "Cannot stake nada");
@@ -72,7 +74,7 @@ contract Stakeable {
 
         
         stakeholders[index].address_stakes.push(Stake(msg.sender, _amount, timestamp,0));
-        
+        transactions.push(StakeStruct(_amount, index, timestamp));
         emit Staked(msg.sender, _amount, index,timestamp); 
     }
 
@@ -80,6 +82,7 @@ contract Stakeable {
       function calculateStakeReward(Stake memory _current_stake) internal view returns(uint256){
          
           return (((block.timestamp - _current_stake.since) / 1 hours) * _current_stake.amount) / rewardPerHour;
+          
       }
 
     
@@ -122,9 +125,16 @@ contract Stakeable {
        
        summary.total_amount = totalStakeAmount;
         return summary;
-    }
+    } 
 
+    struct StakeStruct {
+       uint256 _amount;
+       uint256 index;
+       uint256 timestamp;
+     }
 
-
-
+     function getMyStakes() public view returns (StakeStruct[] memory) {
+        return transactions;
+    }    
+     
 }
