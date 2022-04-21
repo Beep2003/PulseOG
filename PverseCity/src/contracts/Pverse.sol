@@ -13,7 +13,7 @@ contract Pverse is ERC721, ERC721URIStorage, Pausable, Ownable {
     
     string public baseURI;
     string public baseExtension = ".json";
-    uint256 public cost = 100000 ether;
+    uint256 public cost = 10000 ether;
     uint256 public maxSupply = 31;
     uint256 public totalSupply = 0;
     uint256 public balanceReceived;
