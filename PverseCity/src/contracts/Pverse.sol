@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.9;
 
 // PulseChain and all the coins on it are designed to start with no value, which is ideal.
 
