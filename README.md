@@ -1,7 +1,7 @@
 # PulseOG
 ALL RIGHTS RESERVED
 
-PulseOG is a project building on PulseChain.
+PulseOG is a project building on PulseChain. https://pulseog.com/
 
 Connect metamask to PulseChain TestNet: https://gitlab.com/pulsechaincom/pulsechain-testnet
 
