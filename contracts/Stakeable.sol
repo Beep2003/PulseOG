@@ -41,7 +41,7 @@ contract Stakeable {
      event Staked(address indexed user, uint256 amount, uint256 index, uint256 timestamp);
 
    
-    uint256 internal rewardPerHour = 100;
+    uint256 internal rewardPerHour = 10;
 
     
     function _addStakeholder(address staker) internal returns (uint256){
