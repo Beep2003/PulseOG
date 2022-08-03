@@ -234,7 +234,7 @@ contract Pverse is ReentrancyGuard, ERC721, ERC721URIStorage, Pausable, Ownable 
     }
 
     function _baseURI() internal pure override returns (string memory) {
-        return "ipfs://QmR5Uq7z87zp4vNKauBgLGAYuXXfZskbr2mAecVRPp6dNE/";
+        return "ipfs://QmeEvaksykadN1yp1sm2QxvNn3ttQzXq9i4WXLg5YzByvy/";
     }
 
     function pause() public onlyOwner {
