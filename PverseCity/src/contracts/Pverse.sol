@@ -9,7 +9,7 @@ import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-contract Pverse is ReentrancyGuard, ERC721, ERC721URIStorage, Pausable, Ownable {
+contract Pverse is ERC721, ERC721URIStorage, Pausable, Ownable, ReentrancyGuard {
     using Strings for uint256;
     
     string public baseURI;
