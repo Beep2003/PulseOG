@@ -15,10 +15,19 @@ Swap tPLS for tPOG: https://app.v2b.testnet.pulsex.com/swap?inputCurrency=0xa409
 Stake tPOG and earn intrest: https://pulseog.net/ 
 
 
-Mint Building NFT in Pverse City: https://pulseog.live/ 
+Mint Land NFT in Pverse City: https://pulseog.live/ 
+
+
+Trade Pverse City Land NFT's at Pverse City Marketplace: https://pulseog.xyz/ 
 
 
 tPOG contract address: 0xa4090ec904356f40d4E4B140237e289A872E88aE
 
 
 tPVC contract address: 0x98e4B3ADA399AF10Cc29f9567acE2Cd69eCFFB3B
+
+
+tPVC_V2 contract address: 0xa2221aaae4Bb0C8c9BcaCF3f73D67cd1b398C2Fd
+
+
+Pverse City Marketplace contract address: 0xB6f8938F7EA2f3c15F56A19C9e38EEa16B9d45C6
