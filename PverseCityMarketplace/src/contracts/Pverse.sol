@@ -234,7 +234,7 @@ contract Pverse is ReentrancyGuard, ERC721, ERC721URIStorage, Pausable, Ownable 
     }
 
     function _baseURI() internal pure override returns (string memory) {
-        return "ipfs://QmR5Uq7z87zp4vNKauBgLGAYuXXfZskbr2mAecVRPp6dNE/";
+        return "ipfs://QmeEvaksykadN1yp1sm2QxvNn3ttQzXq9i4WXLg5YzByvy/";
     }
 
     function pause() public onlyOwner {
@@ -253,6 +253,7 @@ contract Pverse is ReentrancyGuard, ERC721, ERC721URIStorage, Pausable, Ownable 
         _setTokenURI(tokenId, uri);
     }
 
+    // The following functions are overrides required by Solidity.
     function _beforeTokenTransfer(address from, address to, uint256 tokenId)
         internal
         whenNotPaused
@@ -260,8 +261,6 @@ contract Pverse is ReentrancyGuard, ERC721, ERC721URIStorage, Pausable, Ownable 
     {
         super._beforeTokenTransfer(from, to, tokenId);
     }
-
-    // The following functions are overrides required by Solidity.
 
     function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
         super._burn(tokenId);
