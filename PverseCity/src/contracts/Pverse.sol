@@ -1,22 +1,23 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.4;
 
 // PulseChain and all the coins on it are designed to start with no value, which is ideal.
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-contract Pverse is ERC721, ERC721URIStorage, Pausable, Ownable, ReentrancyGuard {
+contract Pverse is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, Ownable, ReentrancyGuard {
     using Strings for uint256;
     
     string public baseURI;
     string public baseExtension = ".json";
     uint256 public cost = 1000000 ether;
     uint256 public maxSupply = 31;
-    uint256 public totalSupply = 0;
+    uint256 public totalSupplyy = 0;
     uint256 public balanceReceived;
 
     struct Building {
@@ -163,14 +164,14 @@ contract Pverse is ERC721, ERC721URIStorage, Pausable, Ownable, ReentrancyGuard 
     }
 
     function mint(uint256 _id) public payable {
-        uint256 supply = totalSupply;
-        require(supply <= maxSupply);
+        uint256 supplyy = totalSupplyy;
+        require(supplyy <= maxSupply);
         require(buildings[_id - 1].owner == address(0x0));
         require(msg.value >= cost);
 
         // NOTE: tokenID always starts from 1, but our array starts from 0
         buildings[_id - 1].owner = msg.sender;
-        totalSupply = totalSupply + 1;
+        totalSupplyy = totalSupplyy + 1;
 
         _safeMint(msg.sender, _id);
     }
@@ -234,7 +235,7 @@ contract Pverse is ERC721, ERC721URIStorage, Pausable, Ownable, ReentrancyGuard 
     }
 
     function _baseURI() internal pure override returns (string memory) {
-        return "ipfs://QmeEvaksykadN1yp1sm2QxvNn3ttQzXq9i4WXLg5YzByvy/";
+        return "ipfs//Qmej2iZFPra8Y1sL81a8wAnXxsyaCmTFzovBC49dsGPGcn/";
     }
 
     function pause() public onlyOwner {
@@ -254,15 +255,25 @@ contract Pverse is ERC721, ERC721URIStorage, Pausable, Ownable, ReentrancyGuard 
     }
 
     // The following functions are overrides required by Solidity.
+
+    function supportsInterface(bytes4 interfaceId)
+        public
+        view
+        override(ERC721, ERC721Enumerable)
+        returns (bool)
+    {
+        return super.supportsInterface(interfaceId);
+    }
+
+
     function _beforeTokenTransfer(address from, address to, uint256 tokenId)
         internal
-        whenNotPaused
-        override
+        override(ERC721, ERC721Enumerable)
     {
         super._beforeTokenTransfer(from, to, tokenId);
     }
 
-    function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
+   function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
         super._burn(tokenId);
     }
 
