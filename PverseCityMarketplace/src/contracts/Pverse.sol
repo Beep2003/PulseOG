@@ -235,7 +235,7 @@ contract Pverse is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, Ownable
     }
 
     function _baseURI() internal pure override returns (string memory) {
-        return "ipfs//Qmej2iZFPra8Y1sL81a8wAnXxsyaCmTFzovBC49dsGPGcn/";
+        return "ipfs://QmeEvaksykadN1yp1sm2QxvNn3ttQzXq9i4WXLg5YzByvy/";
     }
 
     function pause() public onlyOwner {

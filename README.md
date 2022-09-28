@@ -33,7 +33,13 @@ tPVC_V2 contract address: 0xa2221aaae4Bb0C8c9BcaCF3f73D67cd1b398C2Fd
 tPVC_V3 contract address: 0x6f5dF01444A386122bFDD24dE5dc5986feA199A8
 
 
+tPVC_V4 contract address: 0x0cC5594C66A2640F5B49e00EcEabf06C3b7dC2Db
+
+
 Pverse City Marketplace contract address: 0xB6f8938F7EA2f3c15F56A19C9e38EEa16B9d45C6
 
 
 Pverse City Marketplace_V2 contract address: 0x6Fb04c386759719d2e9AcAfEd09225cB4d7ED8BE
+
+
+Pverse City Marketplace_V3 contract address: 0xF6aeACa3CEb73F845dfd0d9582812cE7004EcC9C
