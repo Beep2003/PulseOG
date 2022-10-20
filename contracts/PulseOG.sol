@@ -6,7 +6,7 @@ pragma solidity ^0.8.4;
 import "./Ownable.sol";
 import "./Stakeable.sol";
 
-contract PulseOG is Ownable, Stakeable{
+contract PulseOG is Ownable, Stakeable {
   
 
  
