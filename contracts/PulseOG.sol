@@ -14,7 +14,7 @@ contract PulseOG is Ownable, Stakeable {
   uint8 private _decimals;
   string private _symbol;
   string private _name;
-
+  string public constant AUTHORS = "@Beep2003 pulseog.com";
  
   mapping (address => uint256) private _balances;
  
