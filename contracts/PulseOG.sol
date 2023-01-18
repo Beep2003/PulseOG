@@ -145,17 +145,6 @@ contract PulseOG is Ownable, Stakeable {
       _approve(spender, msg.sender, _allowances[spender][msg.sender] - amount);
       return true;
     }
- 
-    function increaseAllowance(address spender, uint256 amount) public returns (bool) {
-      _approve(msg.sender, spender, _allowances[msg.sender][spender]+amount);
-      return true;
-    }
- 
-    function decreaseAllowance(address spender, uint256 amount) public returns (bool) {
-      _approve(msg.sender, spender, _allowances[msg.sender][spender]-amount);
-      return true;
-    }
-
    
     function stake(uint256 _amount) public {
       
