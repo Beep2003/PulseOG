@@ -6,6 +6,7 @@ pragma solidity ^0.8.4;
 import "./Ownable.sol";
 import "./Stakeable.sol";
 
+/// @custom:security-contact info@pulseog.com
 contract PulseOG is Ownable, Stakeable {
   
 
