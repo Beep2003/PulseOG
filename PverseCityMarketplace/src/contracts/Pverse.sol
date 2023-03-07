@@ -1,16 +1,16 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.9;
 
 // PulseChain and all the coins on it are designed to start with no value, which is ideal.
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
-import "@openzeppelin/contracts/security/Pausable.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-contract Pverse is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, Ownable, ReentrancyGuard {
+
+contract Pverse is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable, ReentrancyGuard {
     using Strings for uint256;
     
     string public baseURI;
@@ -162,6 +162,11 @@ contract Pverse is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, Ownable
         );
 
     }
+    
+    
+    function _baseURI() internal pure override returns (string memory) {
+        return "ipfs://QmeEvaksykadN1yp1sm2QxvNn3ttQzXq9i4WXLg5YzByvy/";
+    }
 
     function mint(uint256 _id) public payable {
         uint256 supplyy = totalSupplyy;
@@ -228,22 +233,12 @@ contract Pverse is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, Ownable
 
     function setBaseURI(string memory _newBaseURI) public onlyOwner {
     baseURI = _newBaseURI;
+    
     }
 
-  function setBaseExtension(string memory _newBaseExtension) public onlyOwner {
+    function setBaseExtension(string memory _newBaseExtension) public onlyOwner {
     baseExtension = _newBaseExtension;
-    }
-
-    function _baseURI() internal pure override returns (string memory) {
-        return "ipfs://QmeEvaksykadN1yp1sm2QxvNn3ttQzXq9i4WXLg5YzByvy/";
-    }
-
-    function pause() public onlyOwner {
-        _pause();
-    }
-
-    function unpause() public onlyOwner {
-        _unpause();
+    
     }
 
     function safeMint(address to, uint256 tokenId, string memory uri)
@@ -254,26 +249,14 @@ contract Pverse is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, Ownable
         _setTokenURI(tokenId, uri);
     }
 
-    // The following functions are overrides required by Solidity.
-
-    function supportsInterface(bytes4 interfaceId)
-        public
-        view
-        override(ERC721, ERC721Enumerable)
-        returns (bool)
-    {
-        return super.supportsInterface(interfaceId);
-    }
-
-
-    function _beforeTokenTransfer(address from, address to, uint256 tokenId)
+    function _beforeTokenTransfer(address from, address to, uint256 tokenId, uint256 batchSize)
         internal
         override(ERC721, ERC721Enumerable)
     {
-        super._beforeTokenTransfer(from, to, tokenId);
+        super._beforeTokenTransfer(from, to, tokenId, batchSize);
     }
 
-   function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
+    function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
         super._burn(tokenId);
     }
 
@@ -292,6 +275,14 @@ contract Pverse is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, Ownable
     return bytes(currentBaseURI).length > 0
         ? string(abi.encodePacked(currentBaseURI, tokenId.toString(), baseExtension))
         : "";
-  }
+    }
 
+    function supportsInterface(bytes4 interfaceId)
+        public
+        view
+        override(ERC721, ERC721Enumerable)
+        returns (bool)
+    {
+        return super.supportsInterface(interfaceId);
+    }
 }
