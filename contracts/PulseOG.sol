@@ -1,13 +1,13 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.9;
 
 // blockchains are speech and speech is a protected human right.
 
 import "./Ownable.sol";
-import "./Stakeable.sol";
+import "./Mineable.sol";
 
 /// @custom:security-contact info@pulseog.com
-contract PulseOG is Ownable, Stakeable {
+contract PulseOG is Ownable, Mineable {
   
 
  
@@ -147,24 +147,21 @@ contract PulseOG is Ownable, Stakeable {
       return true;
     }
    
-    function stake(uint256 _amount) public {
+    function mine(uint256 _amount) public {
       
-      require(_amount < _balances[msg.sender], "PulseOG: Cannot stake more than you own");
+      require(_amount < _balances[msg.sender], "PulseOG: Cannot mine more than you own");
 
-        _stake(_amount);
+        _mine(_amount);
                
         _burn(msg.sender, _amount);
     }
 
    
-    function withdrawStake(uint256 amount, uint256 stake_index)  public {
+    function withdrawMine(uint256 amount, uint256 mine_index)  public {
 
-      uint256 amount_to_mint = _withdrawStake(amount, stake_index);
+      uint256 amount_to_mint = _withdrawMine(amount, mine_index);
       
       _mint(msg.sender, amount_to_mint);
     }
 
-    
-    
-    
 }
