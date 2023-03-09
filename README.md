@@ -12,7 +12,7 @@ Get TestNet PLS: https://faucet.v2b.testnet.pulsechain.com/
 Swap tPLS for tPOG: https://app.v2b.testnet.pulsex.com/swap?inputCurrency=0xa4090ec904356f40d4E4B140237e289A872E88aE
 
 
-Stake tPOG and earn intrest: https://pulseog.net/ 
+Mine tPOG and earn rewards: https://pulseog.net/ 
 
 
 Mint Land NFT in Pverse City: https://pulseog.live/ 
