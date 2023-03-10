@@ -49,3 +49,6 @@ Pverse City Marketplace_V2 contract address: 0x6Fb04c386759719d2e9AcAfEd09225cB4
 
 
 Pverse City Marketplace_V3 contract address: 0xF6aeACa3CEb73F845dfd0d9582812cE7004EcC9C
+
+
+PULSECHAIN V3 TESTNET:
