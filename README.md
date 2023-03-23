@@ -9,7 +9,7 @@ PulseOG is a project building on PulseChain. https://pulseog.com/
 PULSECHAIN V2B TESTNET:
 
 
-Connect metamask to PulseChain TestNet: https://gitlab.com/pulsechaincom/pulsechain-testnet
+Connect MetaMask to PulseChain TestNet: https://gitlab.com/pulsechaincom/pulsechain-testnet
 
 
 Get TestNet PLS: https://faucet.v2b.testnet.pulsechain.com/
@@ -52,3 +52,30 @@ Pverse City Marketplace_V3 contract address: 0xF6aeACa3CEb73F845dfd0d9582812cE70
 
 
 PULSECHAIN V3 TESTNET:
+
+
+Connect MetaMask to PulseChain TestNet: https://gitlab.com/pulsechaincom/pulsechain-testnet
+
+
+Get TestNet PLS: https://faucet.v3.testnet.pulsechain.com/
+
+
+Swap tPLS for tPOG: https://app.v3.testnet.pulsex.com/swap?inputCurrency=0xb8f611194F89ee564F9C89aCa06a66F42EBC7Fdf
+
+
+Mine tPOG and earn rewards: https://pulseog.net/ 
+
+
+Mint Land NFT in Pverse City: https://pulseog.live/ 
+
+
+Trade Pverse City Land NFT's at Pverse City Marketplace: https://pulseog.xyz/ 
+
+
+tPOG contract address: 0xb8f611194F89ee564F9C89aCa06a66F42EBC7Fdf
+
+
+tPVC contract address: 0x30e8bE229812e52c43e5b68b608BE5dFAEe3C6CE
+
+
+Pverse City Marketplace contract address: 0x6Fb04c386759719d2e9AcAfEd09225cB4d7ED8BE
