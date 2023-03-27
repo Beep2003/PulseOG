@@ -4,7 +4,7 @@ module.exports = {
   networks: {
     testnet: {
       chainId: 942,
-      url: "https://rpc.v23.testnet.pulsechain.com",
+      url: "https://rpc.v3.testnet.pulsechain.com",
       accounts: (process.env.PKEYS || '').split(','),
       gasPrice: 50000000000,
     },
