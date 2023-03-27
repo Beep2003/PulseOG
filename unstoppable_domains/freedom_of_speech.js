@@ -1,7 +1,10 @@
 {
-    'PulseOG Stake =        pulseog.crypto'
+    'PulseOG Mine =        pulseog.crypto'
+    
+    'Pverse City =          pulseog.blockchain'
     
     'Pverse Marketplace =   pulseog.nft'
 
-    'Pverse City =          pulseog.blockchain' 
+    
+     
 }
