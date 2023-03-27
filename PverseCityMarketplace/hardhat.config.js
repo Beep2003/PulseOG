@@ -3,8 +3,8 @@ require("@nomiclabs/hardhat-waffle");
 module.exports = {
   networks: {
     testnet: {
-      chainId: 941,
-      url: "https://rpc.v2b.testnet.pulsechain.com",
+      chainId: 942,
+      url: "https://rpc.v23.testnet.pulsechain.com",
       accounts: (process.env.PKEYS || '').split(','),
       gasPrice: 50000000000,
     },
