@@ -46,6 +46,14 @@ module.exports = {
       skipDryRun: true
     },
 
+    testnetpulsev4: {
+      provider: () => new HDWalletProvider(mnemonic, `https://rpc.v4.testnet.pulsechain.com`),
+      network_id: 943,
+      confirmations: 10,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    },
+
   
   },
 
