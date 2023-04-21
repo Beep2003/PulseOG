@@ -79,3 +79,34 @@ tPVC contract address: 0x30e8bE229812e52c43e5b68b608BE5dFAEe3C6CE
 
 
 Pverse City Marketplace contract address: 0x6Fb04c386759719d2e9AcAfEd09225cB4d7ED8BE
+
+
+PULSECHAIN V4 TESTNET:
+
+
+Connect MetaMask to PulseChain TestNet: https://gitlab.com/pulsechaincom/pulsechain-testnet
+
+
+Get TestNet PLS: https://faucet.v4.testnet.pulsechain.com/
+
+
+Swap tPLS for tPOG: https://app.v4.testnet.pulsex.com/swap?inputCurrency=0xb8f611194F89ee564F9C89aCa06a66F42EBC7Fdf
+
+
+Mine tPOG and earn rewards: https://pulseog.net/ 
+
+
+Mint Land NFT in Pverse City: https://pulseog.live/ 
+
+
+Trade Pverse City Land NFT's at Pverse City Marketplace: https://pulseog.xyz/ 
+
+
+tPOG contract address: 0xb8f611194F89ee564F9C89aCa06a66F42EBC7Fdf
+
+
+tPVC contract address: 0x30e8bE229812e52c43e5b68b608BE5dFAEe3C6CE
+
+
+Pverse City Marketplace contract address: 0x6Fb04c386759719d2e9AcAfEd09225cB4d7ED8BE
+
