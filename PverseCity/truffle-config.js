@@ -46,10 +46,10 @@ module.exports = {
       timeoutBlocks: 200,
       skipDryRun: true
     },
-    testnetpulsev4: {
+    mainnet: {
       networkCheckTimeout: 10000,
-      provider: () => new HDWalletProvider(mnemonic, `https://rpc.v4.testnet.pulsechain.com`),
-      network_id: 943,
+      provider: () => new HDWalletProvider(mnemonic, `https://rpc.pulsechain.com`),
+      network_id: 369,
       confirmations: 10,
       timeoutBlocks: 200,
       skipDryRun: true
