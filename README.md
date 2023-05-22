@@ -12,7 +12,7 @@ PulseChain Mainnet
 Connect MetaMask to PulseChain: https://gitlab.com/pulsechaincom/pulsechain-mainnet
 
 
-Swap PLS for POG: https://app.pulsex.com/swap?inputCurrency=0x30e8bE229812e52c43e5b68b608BE5dFAEe3C6CE
+Swap PLS for POG: https://app.pulsex.com/swap?inputCurrency=0x30e8be229812e52c43e5b68b608be5dfaee3c6ce&outputCurrency=PLS
 
 
 Mine POG and earn rewards: https://pulseog.net/ 
