@@ -12,16 +12,16 @@ PulseChain Mainnet
 Connect MetaMask to PulseChain: https://gitlab.com/pulsechaincom/pulsechain-mainnet
 
 
-Swap PLS for POG: https://app.pulsex.com/swap?inputCurrency=0x30e8be229812e52c43e5b68b608be5dfaee3c6ce&outputCurrency=PLS
+Swap PLS for POG: https://gopulse.com/x/embed?out=0x30e8bE229812e52c43e5b68b608BE5dFAEe3C6CE
 
 
-Mine POG and earn rewards: https://pulseog.net/ 
+Mine POG and earn rewards: 
 
 
-Mint Land NFT in Pverse City: https://pulseog.live/ 
+Mint Land NFT in Pverse City: 
 
 
-Trade Pverse City Land NFT's at Pverse City Marketplace: https://pulseog.xyz/ 
+Trade Pverse City Land NFT's at Pverse City Marketplace:  
 
 
 POG contract address: 0x30e8bE229812e52c43e5b68b608BE5dFAEe3C6CE
